@@ -228,9 +228,27 @@
               </li>
 
               <li class="nav-item">
+                <a href="{{route('Details.Education.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Education</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
                 <a href="{{route('Details.skill.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Skill</p>
+
+              <li class="nav-item">
+                <a href="{{route('Details.Exprience.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Exprience</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('Details.Portfolio.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Portfolio</p>
                 </a>
               </li>
 

@@ -5,6 +5,10 @@ use App\Http\Controllers\backend\WebsettingController;
 use App\Http\Controllers\backend\SocialController;
 use App\Http\Controllers\backend\SkillController;
 use App\Http\Controllers\backend\AboutController;
+use App\Http\Controllers\backend\EducationController;
+use App\Http\Controllers\backend\ExprienceController;
+use App\Http\Controllers\backend\PortfolioController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -48,3 +52,29 @@ Route::post('Details/About/store', [AboutController::class,'store'])->name('Deta
 Route::get('Details/About/edit/{id}', [AboutController::class,'edit'])->name('Details.About.edit');
 Route::post('Details/About/update/{id}', [AboutController::class,'update'])->name('Details.About.update');
 Route::get('Details/About/delete/{id}', [AboutController::class,'destroy'])->name('Details.About.delete');
+
+
+//Education Route__//
+Route::get('Details/Education/index', [EducationController::class,'index'])->name('Details.Education.index');
+Route::get('Details/Education/create', [EducationController::class,'create'])->name('Details.Education.create');
+Route::post('Details/Education/store', [EducationController::class,'store'])->name('Details.Education.store');
+Route::get('Details/Education/edit/{id}', [EducationController::class,'edit'])->name('Details.Education.edit');
+Route::post('Details/Education/update/{id}', [EducationController::class,'update'])->name('Details.Education.update');
+Route::get('Details/Education/delete/{id}', [EducationController::class,'destroy'])->name('Details.Education.delete');
+
+
+//__ExprienceRoute__//
+Route::get('Details/Exprience/index', [ExprienceController::class,'index'])->name('Details.Exprience.index');
+Route::get('Details/Exprience/create', [ExprienceController::class,'create'])->name('Details.Exprience.create');
+Route::post('Details/Exprience/store', [ExprienceController::class,'store'])->name('Details.Exprience.store');
+Route::get('Details/Exprience/edit/{id}', [ExprienceController::class,'edit'])->name('Details.Exprience.edit');
+Route::post('Details/Exprience/update/{id}', [ExprienceController::class,'update'])->name('Details.Exprience.update');
+Route::get('Details/Exprience/delate/{id}', [ExprienceController::class,'destroy'])->name('Details.Exprience.delete');
+
+//__Portfolio Route__//
+Route::get('Details/Portfolio/index', [PortfolioController::class,'index'])->name('Details.Portfolio.index');
+Route::get('Details/Portfolio/create', [PortfolioController::class,'create'])->name('Details.Portfolio.create');
+Route::post('Details/Portfolio/store', [PortfolioController::class,'store'])->name('Details.Portfolio.store');
+Route::get('Details/Portfolio/edit/{id}', [PortfolioController::class,'edit'])->name('Details.Portfolio.edit');
+Route::post('Details/Portfolio/update/{id}', [PortfolioController::class,'update'])->name('Details.Portfolio.update');
+Route::get('Details/Portfolio/delete/{id}', [PortfolioController::class,'destroy'])->name('Details.Portfolio.delete');

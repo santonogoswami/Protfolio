@@ -25,7 +25,6 @@ public function store(Request $request){
     $skill->skill_level = $request->skill_level;
     $skill->save();
     return redirect()->back();
-
   }
   //__Skill Edit__//
   public function edit($id){
