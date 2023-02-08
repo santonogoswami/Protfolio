@@ -8,6 +8,7 @@ use App\Http\Controllers\backend\AboutController;
 use App\Http\Controllers\backend\EducationController;
 use App\Http\Controllers\backend\ExprienceController;
 use App\Http\Controllers\backend\PortfolioController;
+use App\Http\Controllers\backend\ServiceController;
 
 
 Route::get('/', function () {
@@ -78,3 +79,11 @@ Route::post('Details/Portfolio/store', [PortfolioController::class,'store'])->na
 Route::get('Details/Portfolio/edit/{id}', [PortfolioController::class,'edit'])->name('Details.Portfolio.edit');
 Route::post('Details/Portfolio/update/{id}', [PortfolioController::class,'update'])->name('Details.Portfolio.update');
 Route::get('Details/Portfolio/delete/{id}', [PortfolioController::class,'destroy'])->name('Details.Portfolio.delete');
+
+//__Portfolio Route__//
+Route::get('Details/Service/index', [ServiceController::class,'index'])->name('Details.Service.index');
+Route::get('Details/Service/create', [ServiceController::class,'create'])->name('Details.Service.create');
+Route::post('Details/Service/store', [ServiceController::class,'store'])->name('Details.Service.store');
+Route::get('Details/Service/edit/{id}', [ServiceController::class,'edit'])->name('Details.Service.edit');
+Route::post('Details/Service/update/{id}', [ServiceController::class,'update'])->name('Details.Service.update');
+Route::get('Details/Service/delete/{id}', [ServiceController::class,'destroy'])->name('Details.Service.delete');
