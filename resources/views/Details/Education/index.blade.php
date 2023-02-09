@@ -34,7 +34,7 @@
                          <td>{{$d->Inistitute}}</td>
                         <td>
                             <a href="{{ route('Details.Education.edit',$d->id)}}" class="btm btn-sm btn-info">edit</a>
-                            <a href="{{ route('Details.Education.delete',$d->id)}}" class="btm btn-sm btn-danger delete">delete</a>
+                            <a href="{{ route('Details.Education.delete',$d->id)}}" onclick="return confirm('Are you sure you want to delete this item?');" class="btm btn-sm btn-danger delete">delete</a>
                         </td>
 
                      </tr>
