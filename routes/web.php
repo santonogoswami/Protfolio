@@ -9,6 +9,7 @@ use App\Http\Controllers\backend\EducationController;
 use App\Http\Controllers\backend\ExprienceController;
 use App\Http\Controllers\backend\PortfolioController;
 use App\Http\Controllers\backend\ServiceController;
+use App\Http\Controllers\backend\TestominialController;
 
 
 Route::get('/', function () {
@@ -80,10 +81,18 @@ Route::get('Details/Portfolio/edit/{id}', [PortfolioController::class,'edit'])->
 Route::post('Details/Portfolio/update/{id}', [PortfolioController::class,'update'])->name('Details.Portfolio.update');
 Route::get('Details/Portfolio/delete/{id}', [PortfolioController::class,'destroy'])->name('Details.Portfolio.delete');
 
-//__Portfolio Route__//
+//__Service Route__//
 Route::get('Details/Service/index', [ServiceController::class,'index'])->name('Details.Service.index');
 Route::get('Details/Service/create', [ServiceController::class,'create'])->name('Details.Service.create');
 Route::post('Details/Service/store', [ServiceController::class,'store'])->name('Details.Service.store');
 Route::get('Details/Service/edit/{id}', [ServiceController::class,'edit'])->name('Details.Service.edit');
 Route::post('Details/Service/update/{id}', [ServiceController::class,'update'])->name('Details.Service.update');
 Route::get('Details/Service/delete/{id}', [ServiceController::class,'destroy'])->name('Details.Service.delete');
+
+//__Testominial Route__//
+Route::get('Details/Testominial/index', [TestominialController::class,'index'])->name('Details.Testominial.index');
+Route::get('Details/Testominial/create', [TestominialController::class,'create'])->name('Details.Testominial.create');
+Route::post('Details/Testominial/store', [TestominialController::class,'store'])->name('Details.Testominial.store');
+Route::get('Details/Testominial/edit/{id}', [TestominialController::class,'edit'])->name('Details.Testominial.edit');
+Route::post('Details/Testominial/update/{id}', [TestominialController::class,'update'])->name('Details.Testominial.update');
+Route::get('Details/Testominial/delete/{id}', [TestominialController::class,'destroy'])->name('Details.Testominial.delete');
