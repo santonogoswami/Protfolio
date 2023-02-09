@@ -20,6 +20,12 @@ class PortfolioController extends Controller
             }
     //__Store Method__//
 public function store(Request $request){
+
+    $request->validate([
+        'name' => 'required',
+        'link' => 'required',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+    ]);
     $portfolio=new portfolio;
     $portfolio->name = $request->name;
     $portfolio->link = $request->link;
@@ -40,6 +46,11 @@ public function edit($id){
         //_Update Method__//
         public function update(Request $request, $id)
         {
+            $request->validate([
+                'name' => 'required',
+                'link' => 'required',
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+            ]);
             $portfolio = Portfolio::find($id);
             $portfolio->name = $request->name;
             $portfolio->link = $request->link;

@@ -16,6 +16,11 @@ class SocialController extends Controller
         return view('Details.social.create');
     }
     public function store(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'link' => 'required',
+            'icon' => 'required',
+        ]);
       $social=new Social;
       $social->name = $request->name;
       $social->link = $request->link;
@@ -30,6 +35,11 @@ class SocialController extends Controller
     }
     //update method//
     public function update(Request $request, $id){
+        $request->validate([
+            'name' => 'required',
+            'link' => 'required',
+            'icon' => 'required',
+        ]);
         $social=social::find($id);
         $social->name = $request->name;
         $social->link = $request->link;

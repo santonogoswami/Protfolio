@@ -19,6 +19,12 @@ class TestominialController extends Controller
     }
     //__Store Method__//
 public function store(Request $request){
+    $request->validate([
+        'name' => 'required',
+        'designation' => 'required',
+        'testominial' => 'required',
+
+    ]);
     $testominial=new testominial;
     $testominial->name = $request->name;
     $testominial->designation = $request->designation;
@@ -33,6 +39,11 @@ public function edit($id){
     }
         //__Update Method__//
 public function update(Request $request,$id){
+    $request->validate([
+        'name' => 'required',
+        'designation' => 'required',
+        'testominial' => 'required',
+    ]);
     $testominial=testominial::find($id);
     $testominial->name = $request->name;
     $testominial->designation = $request->designation;

@@ -20,11 +20,15 @@ class SkillController extends Controller
 }
 //__Skill Method__//
 public function store(Request $request){
+    $request->validate([
+        'skill_name' => 'required',
+        'skill_level' => 'required',
+    ]);
     $skill=new skill;
     $skill->skill_name = $request->skill_name;
     $skill->skill_level = $request->skill_level;
     $skill->save();
-    return redirect()->back();
+    return redirect('Details/skill/index');
   }
   //__Skill Edit__//
   public function edit($id){
@@ -33,6 +37,10 @@ public function store(Request $request){
     }
     //__Update Method__//
     public function update(Request $request,$id){
+        $request->validate([
+            'skill_name' => 'required',
+            'skill_level' => 'required',
+        ]);
         $skill=skill::find($id);
         $skill->skill_name = $request->skill_name;
         $skill->skill_level = $request->skill_level;

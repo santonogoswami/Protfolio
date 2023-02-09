@@ -20,6 +20,11 @@ public function create(){
 
 //__Store Method__//
 public function store(Request $request){
+    $request->validate([
+        'name' => 'required',
+        'description' => 'required',
+        'icon' => 'required',
+    ]);
     $service=new service;
     $service->name = $request->name;
     $service->description = $request->description;
@@ -34,6 +39,11 @@ public function edit($id){
     }
     //__Update Method__//
 public function update(Request $request,$id){
+    $request->validate([
+        'name' => 'required',
+        'description' => 'required',
+        'icon' => 'required',
+    ]);
     $service=service::find($id);
     $service->name = $request->name;
     $service->description = $request->description;

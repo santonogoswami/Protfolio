@@ -20,6 +20,13 @@ public function create(){
 }
 //__Store Method__//
 public function store(Request $request){
+    $request->validate([
+        'company' => 'required',
+        'designation' => 'required',
+        'form' => 'required',
+        'to' => 'required',
+        'description' => 'required',
+    ]);
     $exprience=new exprience;
     $exprience->company = $request->company;
     $exprience->designation = $request->designation;
@@ -36,6 +43,13 @@ public function edit($id){
     }
     //update Method__//
 public function update(Request $request,$id){
+    $request->validate([
+        'company' => 'required',
+        'designation' => 'required',
+        'form' => 'required',
+        'to' => 'required',
+        'description' => 'required',
+    ]);
     $exprience=exprience::find($id);
     $exprience->company = $request->company;
     $exprience->designation = $request->designation;

@@ -16,6 +16,17 @@ class WebsettingController extends Controller
         return view('Details.websetting.create');
     }
     public function store(Request $request){
+
+        $request->validate([
+            'location' => 'required',
+            'email' => 'required|email',
+            'call' => 'required',
+            'google_map' => 'required',
+            'name' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+        ]);
+
+
         $webSetting = new webSetting;
         // $webSetting->id = $request->id;
         $webSetting->location = $request->location;
@@ -45,6 +56,14 @@ class WebsettingController extends Controller
     public function update(Request $request,$id)
     {
 
+        $request->validate([
+            'location' => 'required',
+            'email' => 'required|email',
+            'call' => 'required',
+            'google_map' => 'required',
+            'name' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+        ]);
        $webSetting=webSetting::find($id);
        $webSetting->location = $request->location;
        $webSetting->email = $request->email;
@@ -53,10 +72,12 @@ class WebsettingController extends Controller
        $webSetting->name = $request->name;
 
 
-       $photo= time().'.'. $request->photo->extension();
-           $request->photo->move(public_path('webSetting'), $photo);
-           $path = "/webSetting/".$photo;
-           $webSetting->photo = $path;
+       if ($request->hasFile('photo')) {
+        $photo = time().'.'. $request->photo->extension();
+        $request->photo->move(public_path('webSetting'), $photo);
+        $path = "/webSetting/".$photo;
+        $webSetting->image = $path;
+    }
        // dd($webSetting);
        $webSetting->save();
        return redirect()->back();

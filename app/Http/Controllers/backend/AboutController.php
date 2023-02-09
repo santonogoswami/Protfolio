@@ -21,6 +21,18 @@ class AboutController extends Controller
 
 //__About Store Method__//
 public function store(Request $request){
+    $request->validate([
+        'proffession' => 'required',
+        'short_description' => 'required',
+        'long_description' => 'required',
+        'DOB' => 'required',
+        'age' => 'required',
+        'website' => 'required',
+        'degree' => 'required',
+        'phone' => 'required',
+        'email' => 'required',
+        'city' => 'required',
+    ]);
     $about=new about;
     $about->proffession = $request->proffession;
     $about->short_description = $request->short_description;
@@ -44,6 +56,18 @@ public function store(Request $request){
 
     //About Update Method__//
 public function update(Request $request,$id){
+    $request->validate([
+        'proffession' => 'required',
+        'short_description' => 'required',
+        'long_description' => 'required',
+        'DOB' => 'required',
+        'age' => 'required',
+        'website' => 'required',
+        'degree' => 'required',
+        'phone' => 'required',
+        'email' => 'required',
+        'city' => 'required',
+    ]);
     $about=about::find($id);
     $about->proffession = $request->proffession;
     $about->short_description = $request->short_description;

@@ -23,8 +23,11 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-// Web Setting crud routes//
-Route::get('Details/webSetting/index', [WebsettingController::class,'index'])->name('Details.webSetting.index');
+
+
+Route::middleware(['auth'])->group(function () {
+    // Web Setting crud routes//
+Route::get('Details/webSetting/index', [WebsettingController::class,'index'])->name('Details.webSetting.index')->middleware('auth');
 Route::get('Details/webSetting/create', [websettingController::class,'create'])->name('Details/webSetting.create');
 Route::post('Details/webSetting/store', [websettingController::class,'store'])->name('Details.webSetting.store');
 Route::get('Details/webSetting/edit/{id}', [websettingController::class,'edit'])->name('Details.webSetting.edit');
@@ -105,3 +108,4 @@ Route::post('Details/Contact/store', [ContactController::class,'store'])->name('
 Route::get('Details/Contact/edit/{id}', [ContactController::class,'edit'])->name('Details.Contact.edit');
 Route::post('Details/Contact/update/{id}', [ContactController::class,'update'])->name('Details.Contact.update');
 Route::get('Details/Contact/delete/{id}', [ContactController::class,'destroy'])->name('Details.Contact.delete');
+});

@@ -20,6 +20,13 @@ class EducationController extends Controller
 
 //__Skill Method__//
 public function store(Request $request){
+    $request->validate([
+        'name' => 'required',
+        'passing_year' => 'required',
+        'session' => 'required',
+        'Result' => 'required',
+        'Inistitute' => 'required',
+    ]);
     $education=new education;
     $education->name = $request->name;
     $education->passing_year = $request->passing_year;
@@ -37,6 +44,13 @@ public function store(Request $request){
     }
     //__Update Method__//
 public function update(Request $request,$id){
+    $request->validate([
+        'name' => 'required',
+        'passing_year' => 'required',
+        'session' => 'required',
+        'Result' => 'required',
+        'Inistitute' => 'required',
+    ]);
     $education=education::find($id);
     $education->name = $request->name;
     $education->passing_year = $request->passing_year;
