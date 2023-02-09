@@ -263,6 +263,12 @@
                   <p>Testominial</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('Details.Contact.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Contact</p>
+                </a>
+              </li>
 
             </ul>
           </li>

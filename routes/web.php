@@ -10,6 +10,7 @@ use App\Http\Controllers\backend\ExprienceController;
 use App\Http\Controllers\backend\PortfolioController;
 use App\Http\Controllers\backend\ServiceController;
 use App\Http\Controllers\backend\TestominialController;
+use App\Http\Controllers\backend\ContactController;
 
 
 Route::get('/', function () {
@@ -96,3 +97,11 @@ Route::post('Details/Testominial/store', [TestominialController::class,'store'])
 Route::get('Details/Testominial/edit/{id}', [TestominialController::class,'edit'])->name('Details.Testominial.edit');
 Route::post('Details/Testominial/update/{id}', [TestominialController::class,'update'])->name('Details.Testominial.update');
 Route::get('Details/Testominial/delete/{id}', [TestominialController::class,'destroy'])->name('Details.Testominial.delete');
+
+//__Testominial Route__//
+Route::get('Details/Contact/index', [ContactController::class,'index'])->name('Details.Contact.index');
+Route::get('Details/Contact/create', [ContactController::class,'create'])->name('Details.Contact.create');
+Route::post('Details/Contact/store', [ContactController::class,'store'])->name('Details.Contact.store');
+Route::get('Details/Contact/edit/{id}', [ContactController::class,'edit'])->name('Details.Contact.edit');
+Route::post('Details/Contact/update/{id}', [ContactController::class,'update'])->name('Details.Contact.update');
+Route::get('Details/Contact/delete/{id}', [ContactController::class,'destroy'])->name('Details.Contact.delete');
